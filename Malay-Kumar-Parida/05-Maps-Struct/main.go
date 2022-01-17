@@ -14,7 +14,7 @@ type Animal struct {
 }
 
 type Bird struct {
-	Animal    //Embedding
+	Animal    // Embedding
 	SpeedKMPH float64
 	CanFly    bool
 }
@@ -27,8 +27,8 @@ func main() {
 	}
 	fmt.Println(population)
 
-	//use make function
-	grades := make(map[string]int) //without initializing
+	// Use make function
+	grades := make(map[string]int) // without initializing
 	grades = map[string]int{
 		"Malay":  90,
 		"Swagat": 80,
@@ -40,13 +40,13 @@ func main() {
 	fmt.Println(grades["Siba"])
 	delete(grades, "Malay")
 	fmt.Println(grades)
-	//We get 0 for non existent keys
+	// We get 0 for non existent keys
 	pop, ok := grades["Malay"]
 	fmt.Println(pop, ok)
 	fmt.Println(len(grades))
-	//Maps are copied by reference
+	// Maps are copied by reference
 
-	//Struct
+	// Struct
 	aStudent := Student{
 		age:     22,
 		name:    "Malay Kumar Parida",
@@ -55,14 +55,14 @@ func main() {
 	fmt.Println(aStudent)
 	fmt.Println(aStudent.name)
 
-	//Annoynoymus struct
+	// Anonymous struct
 	aDoctor := struct{ name string }{name: "Malay"}
 	fmt.Println(aDoctor)
 
-	//Structs are copied shallowly like array unlike Slice & maps
+	// Structs are copied shallowly like array unlike Slice & maps
 
-	//Embedding
-	//This is the model of inhertience that Go follows
+	// Embedding
+	// This is the model of inheritance that Go follows
 
 	b := Bird{}
 	b.Name = "Emu"
@@ -70,7 +70,5 @@ func main() {
 	b.SpeedKMPH = 48
 	b.CanFly = false
 	fmt.Println(b)
-
-	//In go we are not inheriting, we are embedding
-
+	// In go we are not inheriting, we are embedding
 }

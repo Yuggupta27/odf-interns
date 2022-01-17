@@ -3,16 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	//if statement
+	// if statement
 	if true {
 		fmt.Println("This is a if statement")
 	}
-	//Alwasy use curly braces even if single statement block
-	//If initializer run a statement for running the if block
+	// Always use curly braces even if single statement block
+	// If initializer run a statement for running the if block
 	target := 10
 	num := 11
 
-	//Demonstarting all compariosion operators & Logical operators
+	// Demonstarting all compariosion operators & logical operators
 
 	if num < 0 || num > 100 {
 		fmt.Println("Enter a valid number in 0-100 range")
@@ -32,7 +32,7 @@ func main() {
 
 	}
 
-	//Doing the same thing using else
+	// Doing the same thing using else
 
 	if num < 0 || num > 100 {
 		fmt.Println("Enter a valid number in 0-100 range")
@@ -48,10 +48,10 @@ func main() {
 		}
 
 	}
-	//comparing float values are tricky
+	// Comparing float values are tricky
 
-	//switch case
-	//Using Initializer
+	// switch case
+	// Using Initializer
 	switch s := 5; s {
 	case 1:
 		fmt.Println("One")
@@ -59,16 +59,16 @@ func main() {
 		fmt.Println("Two")
 	case 3:
 		fmt.Println("Three")
-	//using multiple cases
+	// using multiple cases
 	case 4, 5:
 		fmt.Println("Four or Five")
 	default:
 		fmt.Println("Not expected number")
 	}
 
-	//switch 2nd type syntax
-	//break statement is implicit fall throug can be given
-	//cases can overlap,
+	// switch 2nd type syntax
+	// break statement is implicit, fall through can be given
+	// cases can overlap,
 	s2 := 10
 	switch {
 	case s2 <= 10:
@@ -79,14 +79,14 @@ func main() {
 		fmt.Println("Greater than 20")
 	}
 
-	//Lopps
+	// Loops
 
-	//For loop
+	// For loop
 	for i := 0; i < 5; i++ {
 		fmt.Println(i)
 	}
 
-	//multiple varibales, Can't be separted with commas
+	// multiple variables, can be separated with commas
 
 	for i, j := 0, 0; i < 5; i, j = i+1, j+1 {
 		fmt.Println(i, j)
@@ -95,17 +95,17 @@ func main() {
 		}
 	}
 
-	//There is no do & do while
-	//These things can be done with skipping initialization or skipping increment
+	// There is no do & do while
+	// These things can be done with skipping initialization or skipping increment
 
-	//Similar to while loop
+	// Similar to while loop
 	i := 0
 	for i < 5 {
 		fmt.Println(i)
 		i++
 	}
 
-	//Similar to Do While
+	// Similar to Do While
 	i = 0
 Loop:
 	for {
@@ -115,11 +115,11 @@ Loop:
 		}
 		fmt.Println(i)
 		if i == 9 {
-			break Loop //Can break to a specified label
+			break Loop // Can break to a specified label
 		}
 	}
 
-	//Range based Loop
+	// Range based Loop
 
 	s4 := []int{1, 2, 3}
 	for k, v := range s4 {
@@ -131,5 +131,9 @@ Loop:
 		fmt.Println(k, string(v))
 	}
 
-	//use _ to skip key part
+	// use _ to skip key part
+	s6 := "Malay"
+	for _, v := range s6 {
+		fmt.Println(string(v))
+	}
 }
