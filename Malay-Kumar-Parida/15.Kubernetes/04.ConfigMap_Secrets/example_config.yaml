@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: person1
+data:
+  author: "Malay"
+  lang: "English"
+  year: "2022"
