@@ -18,22 +18,9 @@ spec:
             claimName: pvc01 # reference the pvc name
       containers:
       - name: test
-        image: malayparida2000/multistage_example #  Specifying the image to be used for container
+        image: k8s.gcr.io/nginx-slim:0.8 #  Specifying the image to be used for container
         ports:
         - containerPort: 8081 #  Exposing this port of the container
         volumeMounts:
-        - mountPath: "/"
+        - mountPath: "usr/share/nginx/"
           name: mypvc
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: test-service
-spec:
-  type: NodePort
-  ports:
-  - targetPort: 8081 #  Port of the target container
-    port: 80 #  Port on which the service listens
-    protocol: TCP
-  selector:
-    app: test #  Service will be linked to the deployment by this selector

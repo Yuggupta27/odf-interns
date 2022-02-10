@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: "DaemonSet"
+metadata:
+  name: my-daemon
+spec:
+  selector:
+    matchLabels:
+      author: malay
+  template:
+    metadata:
+      labels:
+        author: malay
+    spec:
+      containers:
+      - name: my-daemon
+        image: malayparida2000/multistage_example
