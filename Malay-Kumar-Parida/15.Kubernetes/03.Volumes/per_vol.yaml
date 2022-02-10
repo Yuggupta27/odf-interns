@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name : pv01
+spec:
+    capacity:
+        storage: 500m #  The amount of storage
+    accessModes: #  Defines the access
+        - ReadWriteOnce
+    hostPath:
+        path: /home/mparida/Desktop/odf-interns/Malay-Kumar-Parida/15.Kubernetes/Volumes #  Path to which we are creating the volume
+    storageClassName: shared
