@@ -1,0 +1,9 @@
+apiVersion: malay.redhat.com/v1
+#  Specifying the group name and API version (name/version) from the CRD
+kind: Application
+# The type in the custom resource definition.
+metadata:
+  name: application-config
+spec:
+  image: malayparida2000/multistage_example
+  data1: some_data
