@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: demo # deployment name
+ labels: 
+  app: demo
+spec: 
+ replicas: 5 # the deployment created 5 replicas
+ selector: 
+  matchLabels: # information about what pods the deployment will apply to
+   app: demo
+ template: # description about the pod
+  metadata: 
+   labels: # label for the pod
+    app: demo
+  spec:
+   containers:
+   - name: demo
+     image: riya_demo_image31
+     ports: 
+     - containerPort: 8080

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: demo
+spec: 
+ containers:
+ - name: demo
+   image: riya_demo_image31
+   ports: 
+   - containerPort: 8080
