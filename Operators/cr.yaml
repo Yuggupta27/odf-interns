@@ -1,0 +1,8 @@
+apiVersion: operators.com/v1
+kind: Example-Application
+metadata:
+  name: my-new-custom-resource
+spec:
+  appSpec: "* * * * */5"
+  image: riya_demo_image31
+  
