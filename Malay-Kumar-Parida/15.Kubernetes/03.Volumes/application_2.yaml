@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment #  Specifying the Kubernetes object kind
+metadata:
+  name: test2
+spec:
+  selector:
+    matchLabels:
+      app: test2 #  Matching the label
+  replicas: 1 #  Telling how many copies of the pod we need
+  template: #  Create pods using pod definition in this template
+    metadata:
+      labels:
+        app: test2 #  Putting the label here
+    spec:
+      volumes:
+        - name : mypvc
+          persistentVolumeClaim:
+            claimName: claim2 # reference the pvc name
+      containers:
+      - name: test2
+        image: k8s.gcr.io/nginx-slim:0.8 #  Specifying the image to be used for container
+        ports:
+        - containerPort: 8081 #  Exposing this port of the container
+        volumeMounts:
+        - mountPath: "usr/share/nginx/"
+          name: mypvc

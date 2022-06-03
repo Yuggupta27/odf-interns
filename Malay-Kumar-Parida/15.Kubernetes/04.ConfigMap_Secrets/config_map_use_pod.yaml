@@ -1,0 +1,18 @@
+kind: Pod 
+apiVersion: v1 
+metadata:
+  name: example-for-configmap
+spec:
+  containers:
+    - name: env-var-configmap
+      image: k8s.gcr.io/nginx-slim:0.8
+      envFrom: #  Use as environment variable
+        - configMapRef:
+            name: person1 #  Referring to the configmap that is already created
+      volumeMounts:
+        - name: config-volume # Referring to the volume in the container to mount it
+          mountPath: usr/share/nginx/
+  volumes:
+      - name: config-volume
+        configMap:
+          name: person2 #  Specifying the configmap as the volume

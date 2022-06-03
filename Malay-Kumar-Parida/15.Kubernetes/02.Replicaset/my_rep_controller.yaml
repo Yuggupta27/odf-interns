@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: example-2
+  labels:
+    author : malay
+spec:
+  replicas: 2
+  selector: 
+    matchLabels: 
+      author: malay
+  template:
+    metadata:
+      labels:
+        author : malay
+    spec:
+      containers:
+      - image: malayparida2000/multistage_example
+        name: example-2
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+      restartPolicy: Always
